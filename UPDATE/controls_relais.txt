@@ -1,0 +1,2 @@
+DEL ./FHEM/58_Relais.pm
+UPD 2018-08-20_22:00:00 19047 FHEM/58_Relais.pm

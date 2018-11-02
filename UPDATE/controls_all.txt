@@ -6,7 +6,7 @@ UPD 2018-10-20_22:00:01 9158 https://raw.githubusercontent.com/thomasramm/fhem-m
 
 DEL ./FHEM/44_TASTER.pm
 DEL ./FHEM/58_TASTER.pm
-UPD 2018-10-20_22:00:01 19551 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_TASTER.pm
+UPD 2018-10-20_22:00:01 19061 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_TASTER.pm
 
 DEL ./FHEM/44_ROLLO.pm
 UPD 2018-10-20_22:00:01 36877 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/44_ROLLO.pm

@@ -12,6 +12,7 @@ use Time::HiRes;
 my %sets = (
   "on" => "noArg",
   "off" => "noArg",
+  "toggle" => "noArg",
   "reset" => "on,off");
 
 ############################################################ INITIALIZE #####
@@ -89,6 +90,10 @@ sub Relais_Set($@) {
   Log3 $name,4,"$name IST $state SOLL $opt";
 
   if($opt ne $state) {
+
+   if($opt eq "toggle") {
+     $opt = ($state = "on" ? "off" : "on");
+   }
     
     my $modul = $hash->{device};
     my $port = $hash->{port} // " ";

@@ -7,6 +7,7 @@ package main;
 use strict;
 use warnings;
 use Time::HiRes;
+use Data::Dumper;
 
 #***** alle möglichen stati die ein Taster haben kann
 my %sets = (
@@ -250,9 +251,9 @@ sub TASTER_Notify($$) {
   for (my $i = 0; $i < $max; $i++) {
     my $s = $dev_hash->{CHANGED}[$i];
       if ($port ne "") {
-	return if ($s !~ /^$port/);
+	next if ($s !~ /^$port/);
 	my @param = split(':',$s);
-    	return if ($port ne $param[0]);
+    	next if ($port ne $param[0]);
 	$value = trim($param[1]);
       } else {
 	$value = $s;

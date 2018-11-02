@@ -1,15 +1,15 @@
 DEL ./FHEM/58_RolloRelais.pm
-UPD 2018-10-20_22:00:00 11984 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_RolloRelais.pm
+UPD 2018-10-20_22:00:01 11984 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_RolloRelais.pm
 
 DEL ./FHEM/58_Relais.pm
-UPD 2018-10-20_22:00:00 9402 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_Relais.pm
+UPD 2018-10-20_22:00:01 9402 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_Relais.pm
 
 DEL ./FHEM/44_TASTER.pm
 DEL ./FHEM/58_TASTER.pm
-UPD 2018-10-20_22:00:00 19551 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_TASTER.pm
+UPD 2018-10-20_22:00:01 19551 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_TASTER.pm
 
 DEL ./FHEM/44_ROLLO.pm
-UPD 2018-10-20_22:00:00 36877 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/44_ROLLO.pm
+UPD 2018-10-20_22:00:01 36877 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/44_ROLLO.pm
 
 DEL ./FHEM/44_ROLLO_Automatik.pm
-UPD 2018-10-20_22:00:00 17513 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/44_ROLLO_Automatik.pm
+UPD 2018-10-20_22:00:01 17513 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/44_ROLLO_Automatik.pm

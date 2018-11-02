@@ -2,7 +2,7 @@ DEL ./FHEM/58_RolloRelais.pm
 UPD 2018-10-20_22:00:01 11684 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_RolloRelais.pm
 
 DEL ./FHEM/58_Relais.pm
-UPD 2018-10-20_22:00:01 9402 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_Relais.pm
+UPD 2018-10-20_22:00:01 9158 https://raw.githubusercontent.com/thomasramm/fhem-modules/master/FHEM/58_Relais.pm
 
 DEL ./FHEM/44_TASTER.pm
 DEL ./FHEM/58_TASTER.pm

@@ -92,7 +92,7 @@ sub Relais_Set($@) {
   if($opt ne $state) {
 
    if($opt eq "toggle") {
-     $opt = ($state = "on" ? "off" : "on");
+     $opt = ($state eq "on" ? "off" : "on");
    }
     
     my $modul = $hash->{device};

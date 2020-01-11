@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+     /* FHEM tablet ui */
+     /*
+     * UI builder framework for FHEM
+     *
+     * Version: 2.2.2
+     * URL: https://github.com/knowthelist/fhem-tablet-ui
+     *
+     * Copyright (c) 2015-2016 Mario Stephan <mstephan@shared-files.de>
+     * Under MIT License (http://www.opensource.org/licenses/mit-license.php)
+     *
+     * Example for a flexbox layout instead of gridster
+     */
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="longpoll" content="1"> <!-- 1=longpoll;0=shortpoll every 30sec -->
+    <meta name="debug" content="0"> <!-- verbose level 1-6 = output to console;0 = not output -->
+	<link rel="icon" sizes="192x192" href="/fhem/images/default/fhemicon_work.png">
+
+    <link rel="stylesheet" href="css/fhem-tablet-ui.css" />
+    <link rel="stylesheet" href="lib/font-awesome.min.css" />
+    <link rel="stylesheet" href="lib/jquery.toast.min.css" />
+    <link rel="stylesheet" href="lib/material-icons.min.css" />
+	<link rel="stylesheet" href="lib/openautomation.css" />
+
+    <!-- define your personal style here, it wont be overwritten  -->
+    <!-- link rel="stylesheet" href="css/fhem-green-ui.css" / -->
+    <!-- link rel="stylesheet" href="css/fhem-tablet-ui-user.css" / -->
+    <!-- link rel="stylesheet" href="css/ftui-bright-mint-ui.css" / -->
+    <link rel="stylesheet" href="css/fhem-mobil-ui.css" />
+
+    <script src="../pgm2/jquery.min.js"></script>
+    <script src="lib/jquery.toast.min.js"></script>
+    <script src="js/fhem-tablet-ui.js" defer></script>
+	
+    <title>Hauszentrale</title>
+</head>
+<body>
+<nav class="menu">
+        <div class="menu-trigger"></div>
+  <header class="">Menu</header>
+  <ul>
+	<li>
+        <div data-type="link" data-url="#flex_start.html"
+        data-color="white"
+        data-width="115"
+        data-load="#content1"
+        data-text-align="left"
+        data-active-pattern="(.*/||.*index.html||.*#flex_start.html)"
+        data-icon="fa-tablet" class=" large"><span>Übersicht</span></div>
+    </li>
+    <li>
+        <div data-type="link" data-url="#flex_room.html"
+        data-color="white"
+        data-width="115"
+        data-load="#content2"
+        data-text-align="left"
+        data-active-pattern=".*#flex_room.html"
+        data-icon="fa-home" class=" large"><span>Räume</span></div>
+    </li>
+    <li>
+        <div data-type="link" data-url="#flex_licht.html"
+        data-color="white"
+        data-width="115"
+        data-load="#content3"
+        data-text-align="left"
+        data-active-pattern=".*#flex_licht.html"
+        data-icon="fa-lightbulb-o" class=" large"><span>Licht</span></div>
+
+    </li>
+    <li>
+        <div data-type="link" data-url="#flex_rollo.html"
+        data-load="#content4"
+        data-color="white"
+        data-width="115"
+        data-text-align="left"
+        data-active-pattern=".*#flex_rollo.html"
+        data-icon="oa oa-fts_shutter_20" class="w2x " style="margin-left:6px"><span class="large" style="margin-left:7px">Rollos</span></div>
+
+    </li>
+    <li>
+        <div data-type="link" data-url="./../"
+        data-color="white"
+        data-width="115"
+        data-text-align="left"
+        data-icon="fa-cog" 
+		class="large">
+        <span>Einstellungen</span>
+        </div>
+    </li>
+  </ul>
+</nav>
+<main>
+    <div class="page" id="content1"></div>
+    <div class="page" id="content2"></div>
+    <div class="page" id="content3"></div>
+    <div class="page" id="content4"></div>
+</main>
+
+</body>
+</html>

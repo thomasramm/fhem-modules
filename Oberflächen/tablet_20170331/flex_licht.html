@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+     /* FHEM tablet ui */
+     /*
+     * UI builder framework for FHEM
+     *
+     * Version: 2.2.2
+     * URL: https://github.com/knowthelist/fhem-tablet-ui
+     *
+     * Copyright (c) 2015-2016 Mario Stephan <mstephan@shared-files.de>
+     * Under MIT License (http://www.opensource.org/licenses/mit-license.php)
+     *
+     * Example for a flexbox layout instead of gridster
+     */
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="longpoll" content="1"> <!-- 1=longpoll;0=shortpoll every 30sec -->
+    <meta name="debug" content="2"> <!-- verbose level 1-6 = output to console;0 = not output -->
+
+    <link rel="stylesheet" href="css/fhem-tablet-ui.css" />
+    <link rel="stylesheet" href="lib/font-awesome.min.css" />
+    <link rel="stylesheet" href="lib/material-icons.min.css" />
+    <link rel="stylesheet" href="lib/jquery.toast.min.css" />
+	<link rel="stylesheet" href="lib/openautomation.css" />
+
+    <!-- define your personal style here, it wont be overwritten  -->
+    <!-- link rel="stylesheet" href="css/fhem-green-ui.css" / -->
+    <!-- link rel="stylesheet" href="css/fhem-tablet-ui-user.css" / -->
+    <link rel="stylesheet" href="css/fhem-mobil-ui.css" />
+	
+    <script src="../pgm2/jquery.min.js"></script>
+    <script src="lib/jquery.toast.min.js"></script>
+    <script src="js/fhem-tablet-ui.js" defer></script>
+
+    <title>FHEM-Tablet-UI</title>
+</head>
+<body>
+<main id="content3">
+      <!-- +++ Gesamt +++ -->
+      <div class="vbox phone-width card lift">
+        <header class="bold large">Gesamtsteuerung</header>
+        <!-- Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Beleuchtung</div>
+                <div data-type="label" data-device="Licht" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="Licht" class="grow-0"></div>
+        </div>
+      </div>
+                 
+      <!-- +++ Einzelsteuerung +++ -->
+      <div class="vbox phone-width card lift">
+        <header class="bold large">Erdgeschoss</header>
+        <!-- Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Wohnzimmer Deckenlicht</div>
+                <div data-type="label" data-device="WohnLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="WohnLicht1" class="grow-0"></div>
+        </div>
+        <!-- Sofa Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Wohnzimmer Licht über Sofa</div>
+                <div data-type="label" data-device="WohnLicht2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="WohnLicht2" class="grow-0"></div>
+        </div>
+		<!-- Schrank Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Wohnzimmer Schranklicht</div>
+            	<div data-type="label" data-device="WohnStrom2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="WohnStrom2" class="grow-0"></div>
+        </div>
+        <!-- Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Esszimmer</div>
+                <div data-type="label" data-device="EssenLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="EssenLicht1" class="grow-0"></div>
+        </div>
+        <!-- Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Küche</div>
+                <div data-type="label" data-device="KuecheLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="KuecheLicht1" class="grow-0"></div>
+        </div>
+		<!-- Nebenlicht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Küche Arbeitsplatte</div>
+                <div data-type="label" data-device="KuechenlichtArbeitsplatte" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="KuechenlichtArbeitsplatte" class="grow-0"></div>
+        </div>
+        <!-- Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Kinderzimmer</div>
+                <div data-type="label" data-device="KindLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="KindLicht1" class="grow-0"></div>
+        </div>
+        <!-- Licht1 Bett -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Schlafzimmer (Bett)</div>
+                <div data-type="label" data-device="SchlafenLicht2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="SchlafenLicht2" class="grow-0"></div>
+        </div>
+		<!-- Schrank Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Schlafzimmer (Schrank)</div>
+            	<div data-type="label" data-device="SchlafenLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="SchlafenLicht1" class="grow-0"></div>
+        </div>
+        <!-- Licht1 Bett -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Bad</div>
+                <div data-type="label" data-device="BadLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="BadLicht1" class="grow-0"></div>
+        </div>
+		<!-- Schrank Licht -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Dusche</div>
+            	<div data-type="label" data-device="BadLicht2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="BadLicht2" class="grow-0"></div>
+        </div>
+		<!-- Flur -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Flur</div>
+                <div data-type="label" data-device="FlurLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="FlurLicht1" class="grow-0"></div>
+        </div>
+      </div>
+                 	  
+	  <!-- +++ Keller +++ -->
+      <div class="vbox phone-width card lift">
+        <header class="bold large">Keller</header>
+        <!-- Licht1 -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Keller</div>
+                <div data-type="label" data-device="KellerLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="KellerLicht1" class="grow-0"></div>
+        </div>
+		<!-- Licht2 -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Vorratsraum</div>
+                <div data-type="label" data-device="KellerLicht2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="KellerLicht2" class="grow-0"></div>
+        </div>
+		<!-- Licht3 -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Fitnessraum</div>
+                <div data-type="label" data-device="Fitnessraum" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="Fitnessraum" class="grow-0"></div>
+        </div>
+      </div>	  	  
+	  	  
+	  <!-- +++ Garten,Dachboden +++ -->
+      <div class="vbox phone-width card lift">
+        <header class="bold large">sonstige</header>
+        <!-- Garten -->
+        <div class="hbox items-space-between">
+            <i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+            <div class="grow-7 left-align">
+                <div class="bold medium">Garten</div>
+                <div data-type="label" data-device="GartenLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+            </div>
+            <div data-type="checkbox" data-device="GartenLicht1" class="grow-0"></div>
+        </div>
+		<!-- Dachboden -->
+		<div class="hbox items-space-between">
+			<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+			<div class="grow-7 left-align">
+				<div class="bold medium">Dachboden</div>
+				<div data-type="label" data-device="DachLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+			</div>
+			<div data-type="checkbox" data-device="DachLicht1" class="grow-0"></div>
+		</div>
+	  </div>
+    </div>
+
+</main>
+</body>
+</html>

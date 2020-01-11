@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+     /* FHEM tablet ui */
+     /*
+     * UI builder framework for FHEM
+     *
+     * Version: 2.2.2
+     * URL: https://github.com/knowthelist/fhem-tablet-ui
+     *
+     * Copyright (c) 2015-2016 Mario Stephan <mstephan@shared-files.de>
+     * Under MIT License (http://www.opensource.org/licenses/mit-license.php)
+     *
+     * Example for a flexbox layout instead of gridster
+     */
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="longpoll" content="1"> <!-- 1=longpoll;0=shortpoll every 30sec -->
+    <meta name="debug" content="2"> <!-- verbose level 1-6 = output to console;0 = not output -->
+
+    <link rel="stylesheet" href="css/fhem-tablet-ui.css" />
+    <link rel="stylesheet" href="lib/font-awesome.min.css" />
+    <link rel="stylesheet" href="lib/material-icons.min.css" />
+    <link rel="stylesheet" href="lib/jquery.toast.min.css" />
+	<link rel="stylesheet" href="lib/openautomation.css" />
+
+    <!-- define your personal style here, it wont be overwritten  -->
+    <!-- link rel="stylesheet" href="css/fhem-green-ui.css" / -->
+    <link rel="stylesheet" href="css/fhem-tablet-ui-user.css" />
+    <!-- link rel="stylesheet" href="css/fhem-mobil-ui.css" / -->
+	
+    <script src="../pgm2/jquery.min.js"></script>
+    <script src="lib/jquery.toast.min.js"></script>
+    <script src="js/fhem-tablet-ui.js" defer></script>
+
+    <title>FHEM-Tablet-UI</title>
+</head>
+<body>
+<main id="content1">
+<div class="hbox">
+    <div class="vbox full-height">
+	    <!-- +++ Automatic +++ -->
+		<div class="card lift" style="background-color:#A4A4A4">
+            <div class="vbox" data-type="popup" data-height="225px" data-width="300px">
+                <i class="oe oa-status_automatic" style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Automatic</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Automatic</header>
+					<!-- Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Gesamte Beleuchtung</div>
+							<div data-type="label" data-device="Licht" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="Licht" class="grow-0"></div>
+					</div>
+					<!-- Rollo -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloBad,RolloEssen,RolloKind,RolloKueche,RolloSchlafen,RolloTerassentuer,RolloWohnen" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen im EG</div>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloBad,RolloEssen,RolloKind,RolloKueche,RolloSchlafen,RolloTerassentuer,RolloWohnen" data-set-on="closed" data-icon="fa-angle-down" data-background-icon="fa-square-o" class=""></div>
+							<div data-type="push" data-device="RolloBad,RolloEssen,RolloKind,RolloKueche,RolloSchlafen,RolloTerassentuer,RolloWohnen" data-set-on="open"   data-icon="fa-angle-up"   data-background-icon="fa-square-o" class=""></div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!-- +++ Wohnzimmer +++ -->
+		<div class="card lift" style="background-color:#337ab7">
+			<div class="vbox" data-type="popup" data-height="350px" data-width="300px">
+				<i class="oa oa-scene_livingroom" style="font-size:72px !important"></i>
+				<div data-type="label" class="big">Wohnen</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Wohnzimmer</header>
+					<!-- Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Deckenlicht</div>
+							<div data-type="label" data-device="WohnLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="WohnLicht1" class="grow-2"></div>
+					</div>
+					<!-- Sofa Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Licht über Sofa</div>
+							<div data-type="label" data-device="WohnLicht2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="WohnLicht2" class="grow-2"></div>
+					</div>
+					<!-- Schrank Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Schranklicht</div>
+							<div data-type="label" data-device="WohnStrom2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+							</div>
+						<div data-type="checkbox" data-device="WohnStrom2" class="grow-2"></div>
+					</div>
+					<!-- Rollo1 -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloWohnen" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" data-color="#0088CC" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen Fenster</div>
+							<span data-type="label" data-device="RolloWohnen" data-get="state" class="left-align"></span>
+							<span data-type="label" data-device="RolloWohnen" data-get="position" data-substitution="toDate().hhmm()" class="timestamp left-align"></span>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloWohnen" data-icon="fa-angle-down" data-background-icon="fa-square-o" data-set-on="closed" class=""></div>
+							<div data-type="push" data-device="RolloWohnen" data-icon="fa-angle-up" data-background-icon="fa-square-o" data-set-on="open" class=""></div>
+						</div>
+					</div>
+					<!-- Rollo2 -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloTerassentuer" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen Tür</div>
+							<span data-type="label" data-device="RolloTerassentuer" data-get="state" class="left-align"></span>
+							<span data-type="label" data-device="RolloTerassentuer" data-get="position" data-substitution="toDate().hhmm()" class="timestamp left-align"></span>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloTerassentuer" data-icon="fa-angle-down" data-background-icon="fa-square-o" data-set-on="closed" class=""></div>
+							<div data-type="push" data-device="RolloTerassentuer" data-icon="fa-angle-up" data-background-icon="fa-square-o" data-set-on="open" class=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+	    </div>
+		<!-- +++ Schlafzimmer +++ -->
+		<div class="card lift" style="background-color:#ad3333">
+			<div class="vbox" data-type="popup" data-height="225px" data-width="300px">
+				<i class="oa oa-scene_sleeping" style="font-size:72px !important"></i>
+				<div data-type="label" class="big">Schlafen</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Schlafzimmer</header>
+					<!-- Licht1 Bett -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Deckenlicht</div>
+							<div data-type="label" data-device="SchlafenLicht2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="SchlafenLicht2" class="grow-2"></div>
+					</div>
+					<!-- Schrank Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Schranklicht</div>
+							<div data-type="label" data-device="SchlafenLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="SchafenLicht1" class="grow-2"></div>
+					</div>
+					<!-- Rollo -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloSchlafen" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen</div>
+							<span data-type="label" data-device="RolloSchlafen" data-get="state" class="left-align"></span>
+							<span data-type="label" data-device="RolloSchlafen" data-get="position" data-substitution="toDate().hhmm()" class="timestamp left-align"></span>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloSchlafen" data-icon="fa-angle-down" data-background-icon="fa-square-o" data-set-on="closed" class=""></div>
+							<div data-type="push" data-device="RolloSchlafen" data-icon="fa-angle-up" data-background-icon="fa-square-o" data-set-on="open" class=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="vbox full-height">
+		<!-- +++ Bad +++ -->
+		<div class="card lift" style="background-color:#aa6900">
+			<div class="vbox" data-type="popup" data-height="225px" data-width="300px">
+				<i class="oa oa-scene_toilet_alternat" style="font-size:72px !important"></i>
+				<div data-type="label" data-device="radio" data-get="STATE" class="big">Bad</div>
+			    <div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Badezimmer</header>
+					<!-- Licht1 Bett -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Decke</div>
+							<div data-type="label" data-device="BadLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="BadLicht1" class="grow-2"></div>
+					</div>
+					<!-- Schrank Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Dusche</div>
+							<div data-type="label" data-device="BadLicht2" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="BadLicht2" class="grow-2"></div>
+					</div>
+					<!-- Rollo -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloBad" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen</div>
+							<span data-type="label" data-device="RolloBad" data-get="state" class="left-align"></span>
+							<span data-type="label" data-device="RolloBad" data-get="position" data-substitution="toDate().hhmm()" class="timestamp left-align"></span>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloBad" data-icon="fa-angle-down" data-background-icon="fa-square-o" data-set-on="closed" class=""></div>
+							<div data-type="push" data-device="RolloBad" data-icon="fa-angle-up" data-background-icon="fa-square-o" data-set-on="open" class=""></div>
+						</div>
+					</div>
+				</div>
+            </div>
+		</div>
+		<!-- +++ Esszimmer +++ -->
+        <div class="card lift" style="background-color:#A4A4A4">
+            <div class="vbox" data-type="popup" data-height="175px" data-width="300px">
+                <i class="oa oa-scene_dinner" style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Essen</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Esszimmer</header>
+					<!-- Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Deckenlicht</div>
+							<div data-type="label" data-device="EssenLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="EssenLicht1" class="grow-2"></div>
+					</div>
+					<!-- Rollo1 -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloEssen" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" data-color="#0088CC" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen Fenster</div>
+							<span data-type="label" data-device="RolloEssen" data-get="state" class="left-align"></span>
+							<span data-type="label" data-device="RolloEssen" data-get="position" data-substitution="toDate().hhmm()" class="timestamp left-align"></span>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloEssen" data-icon="fa-angle-down" data-background-icon="fa-square-o" data-set-on="closed" class=""></div>
+							<div data-type="push" data-device="RolloEssen" data-icon="fa-angle-up" data-background-icon="fa-square-o" data-set-on="open" class=""></div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <!-- +++ Flur & Garten & Dachboden +++ -->
+		<div class="card lift" style="background-color:#43cd80">
+            <div class="vbox" data-type="popup" data-height="225px" data-width="300px">
+                <i class="oa oa-scene_keyboard" style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Flur & Garten</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Flur</header>
+					<!-- Flur -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Flur</div>
+							<div data-type="label" data-device="FlurLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="FlurLicht1" class="grow-0"></div>
+					</div>
+					<!-- Garten -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Gartenweg</div>
+							<div data-type="label" data-device="GartenLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="GartenLicht1" class="grow-0"></div>
+					</div>
+					<!-- Dachboden -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Dachboden</div>
+							<div data-type="label" data-device="DachLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="DachLicht1" class="grow-0"></div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="vbox full-height">
+		<!-- +++ Kinderzimmer +++ -->
+        <div class="card lift" style="background-color:#337ab7">
+            <div class="vbox" data-type="popup" data-height="175px" data-width="300px">
+				<i class="oa oa-scene_childs_room" style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Kind</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Kinderzimmer</header>
+					<!-- Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Deckenlicht</div>
+							<div data-type="label" data-device="KindLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="KindLicht1" class="grow-0"></div>
+					</div>
+					<!-- Rollo1 -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloKind" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" data-color="#0088CC" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen Fenster</div>
+							<span data-type="label" data-device="RolloKind" data-get="state" class="left-align"></span>
+							<span data-type="label" data-device="RolloKind" data-get="position" data-substitution="toDate().hhmm()" class="timestamp left-align"></span>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloKind" data-icon="fa-angle-down" data-background-icon="fa-square-o" data-set-on="closed" class=""></div>
+							<div data-type="push" data-device="RolloKind" data-icon="fa-angle-up" data-background-icon="fa-square-o" data-set-on="open" class=""></div>
+						</div>
+					</div>
+				</div>
+	        </div>
+        </div>
+		<!-- +++ Küche +++ -->
+        <div class="card lift" style="background-color:#ad3333">
+            <div class="vbox" data-type="popup" data-height="225px" data-width="300px">
+                <i class="oa oa-scene_microwave_oven" style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Küche</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Küche</header>
+					<!-- Licht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Deckenlicht</div>
+							<div data-type="label" data-device="KuecheLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="KuecheLicht1" class="grow-0"></div>
+					</div>
+					<!-- Nebenlicht -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Licht Arbeitsplatte</div>
+							<div data-type="label" data-device="KuechenlichtArbeitsplatte" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="KuechenlichtArbeitsplatte" class="grow-0"></div>
+					</div>
+					<!-- Rollo1 -->
+					<div class="hbox items-space-between">
+						<div data-type="push" data-device="RolloKueche" data-set-on="stop" data-icon="oa oa-fts_shutter_20" data-background-icon="" data-color="#0088CC" class="icon-width main-color big"></div>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Rolladen</div>
+							<span data-type="label" data-device="RolloKueche" data-get="state" class="left-align"></span>
+							<span data-type="label" data-device="RolloKueche" data-get="position" data-substitution="toDate().hhmm()" class="timestamp left-align"></span>
+						</div>
+						<div class="hbox">
+							<div data-type="push" data-device="RolloKueche" data-icon="fa-angle-down" data-background-icon="fa-square-o" data-set-on="closed" class=""></div>
+							<div data-type="push" data-device="RolloKueche" data-icon="fa-angle-up" data-background-icon="fa-square-o" data-set-on="open" class=""></div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+		<!-- +++ Keller +++ -->
+        <div class="card lift" style="background-color:#aa6900">
+            <div class="vbox" data-type="popup" data-height="225px" data-width="300px">
+                <i class="fa fa-toggle-down " style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Keller</div>
+				<div class="dialog vbox phone-width card lift" style="color:black">
+					<header class="bold large">Keller</header>
+					<!-- Licht1 -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Licht</div>
+							<div data-type="label" data-device="KellerLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="KellerLicht1" class="grow-0"></div>
+					</div>
+					<!-- Licht2 -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Vorratsraum</div>
+							<div data-type="label" data-device="KellerVorraumLicht1" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="KellerVorraumLicht1" class="grow-0"></div>
+					</div>
+					<!-- Licht3 -->
+					<div class="hbox items-space-between">
+						<i class="fa fa-lightbulb-o bigger icon-width main-color"></i>
+						<div class="grow-7 left-align">
+							<div class="bold medium">Fitnessraum</div>
+							<div data-type="label" data-device="Fitnessraum" data-get="state" data-substitution="toDate().hhmm()" class="timestamp left-align"></div>
+						</div>
+						<div data-type="checkbox" data-device="Fitnessraum" class="grow-0"></div>
+					</div>
+				</div>	  	  
+            </div>
+        </div>
+
+    </div>
+    <div class="vbox full-height">
+        <div class="card lift" style="background-color:#04B45F">
+            <div class="vbox" data-type="popup" data-height="400px" data-width="300px">
+                <i class="fa fa-apple " style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Dummy</div>
+            </div>
+        </div>
+		<div class="card lift" style="background-color:#337ab7">
+            <div class="vbox" data-type="popup" data-height="400px" data-width="300px">
+                <i class="fa fa-google " style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Dummy</div>
+            </div>
+        </div>
+		<div class="card lift" style="background-color:#ad3333">
+            <div class="vbox" data-type="popup" data-height="400px" data-width="300px">
+                <i class="fa fa-android " style="font-size:72px !important"></i>
+                <div data-type="label" class="big">Dummy</div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+</html>

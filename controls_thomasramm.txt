@@ -1,5 +1,5 @@
 DEL ./FHEM/58_RolloRelais.pm
-UPD 2020-11-30_12:17:00 11686 FHEM/58_RolloRelais.pm
+UPD 2020-11-30_12:17:00 11685 FHEM/58_RolloRelais.pm
 
 DEL ./FHEM/58_Relais.pm
 UPD 2020-11-30_12:17:00 7053 FHEM/58_Relais.pm

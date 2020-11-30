@@ -18,7 +18,7 @@ Modul RolloRelais `https://raw.githubusercontent.com/thomasramm/fhem-modules/mas
 
 Modul Taster `https://raw.githubusercontent.com/thomasramm/fhem-modules/master/controls_taster.txt`
 
-Alle Module: `https://raw.githubusercontent.com/thomasramm/fhem-modules/master/controls_all.txt`
+Alle Module: `https://raw.githubusercontent.com/thomasramm/fhem-modules/master/controls_thomasramm.txt`
 
 
 ## Die Module

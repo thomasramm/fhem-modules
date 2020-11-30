@@ -176,69 +176,44 @@ sub Relais_Attr(@) {
 =end html
 
 =begin html_DE
-
 <a name="Relais"></a>
-        <h3>Relais</h3>
-        <p>Logisches Modul das ein "on"/"off" Reading um die Möglichkeit erweitert den Tastendruck
-nach folgenden Stati auszuwerten
-<ul><li>kurzer Tastendruck</li>
-<li>langer Tastendruck</li>
-<li>doppelter Tastendruck</li>
-<li>Taste wird gerade gedrückt</li></ul>.
-Das Hauptaugenmerk liegt bei diesem Modul darauf die verschiedenen Tastendrücke auszuwerten, die Darstellung
-der Tasten auf der Oberfläche und die Set-Methoden dienen mehr dem Debugging.
-In der Definition wird das Hardwaremodul und das Reading (der Port/Adresse) des "on"/"off" Tasters angegeben</p>
-        <h4>Beispiel</h4>
-        <p>
-            <code>define Taster1 Relais myMcp20 PortB1</code>
-            <br />
-        </p>
-        <br />
-        <a name="Relaisdefine"></a>
-        <h4>Define</h4>
-        <code>define &lt;name&gt; Relais &lt;device&gt; &lt;port&gt; </code>
-        <p><code>[&lt;device&gt;]</code><br />Das Device dessen Reading ausgewertet werden soll </p>
-        <p><code>&lt;port&gt;</code><br />Der Auszuwertende Port/Reading des Device</p>
-        <br />
-        <br />
-        <a name="Relaisset"></a>
-        <h4>Set</h4>
-	<a name="Relaissetter">
-                <ul>
-                  <li><code>set &lt;name&gt; pushed</code></a><br />Status des devices auf 'pushed' setzen, verknüpft aktionen auslösen</li>
-		  <li><code>set &lt;name&gt; short-click</code></a><br /> Status des devices auf 'short-click' setzen, verknüpft aktionen auslösen</li>
-		  <li><code>set &lt;name&gt; double-click</code></a><br /> Status des devices auf 'double-click' setzen, verknüpft aktionen auslösen</li>
-		  <li><code>set &lt;name&gt; long-click</code></a><br /> Status des devices auf 'long-click' setzen, verknüpft aktionen auslösen</li>
-                </ul>
-        <br />
-        <h4>Attribute</h4>
-        <p>Modulspezifische attribute:
-                   <a href="#long-click-time">long-click-time</a>,
-                   <a href="#long-click-define">long-click-define</a>,
-                   <a href="#short-click-define">short-click-define</a>, 
-                   <a href="#double-click-time">double-click-time</a>,
-                   <a href="#double-click-define">double-click-define</a>, 
-                   <a href="#pushed-define">pushed-define</a>
-            </p>
-	<ul>
-	<li><a name="long-click-time"><b>long-click-time</b></a>
-        <p>Zeit in Sekunden die eine Taste gedrückt werden muss um als "Langer Tastendruck" ausgewertet zu werden</p>
-	</li><li><a name="long-click-define"><b>long-click-define</b>
-	<p>Optionaler Befehl der bei einem langen Tastendruck ausgeführt werden soll.<BR/>
-           Hier ist alles erlaubt was auch in der Befehlszeile von fhem eingegeben werden kann.</p>
-	</li><li><a name="short-click-define"><b>short-click-define</b></a>
-	<p>Optionaler Befehl der bei einem kurzen Tastendruck ausgeführt werden soll.<BR/>
-           Hier ist alles erlaubt was auch in der Befehlszeile von fhem eingegeben werden kann.</p>
-	</li><li><a name="double-click-time"><b>double-click-time</b></a>
-	<p>Zeit in Sekunden die nach einem Tastendruck gewartet werden soll. Erfolgt innerhalb dieser
-           Zeit ein weiterer Tastendruck, so wird ein "Doppelter Tastendruck" ausgewertet.</p>
-	</li><li><a name="double-click-define"><b>double-click-define</b></a>
-	<p>Optionaler Befehl der bei einem kurzen Tastendruck ausgeführt werden soll.<BR/>
-           Hier ist alles erlaubt was auch in der Befehlszeile von fhem eingegeben werden kann.</p>
-	</li><li><a name="pushed-click-define"><b>pushed-click-define</b></a>
-	<p>Optionaler Befehl der bei einem kurzen Tastendruck ausgeführt werden soll.<BR/>
-           Hier ist alles erlaubt was auch in der Befehlszeile von fhem eingegeben werden kann.</p>
-        </li></ul>
+<h3>Relais</h3>
+<p>Logisches Modul um einen 'Stromstossschalter' zu steuern. Sende ein kurzes ON/OFF an dein Gerät, und merke dir den aktuellen Gerätestatus.
+  <ul>
+    <li>on, off</li>
+    <li>reset: on, off</li>
+  <ul>
+</p>
+<h4>Beispiel</h4>
+<p>
+  <code>define button1 Relais myMcp20 PortB1</code>
+  <br />
+</p>
+<br />
+<a name="Relaisdefine"></a>
+<h4>Define</h4>
+<code>define &lt;name&gt; Relais &lt;device&gt; &lt;port&gt; </code>
+<p><code>[&lt;device&gt;]</code><br />Das Hardwaregerät dessen Reading verknüpft werden soll</p>
+<p><code>&lt;port&gt;</code> (optional)<br />Der Verknüpfte Port / Reading des Hardwaregeräts</p>
+<br />
+<br />
+<a name="Relaisset"></a>
+<h4>Set</h4>
+<a name="Relaissetter">
+<ul>
+  <li><code>set &lt;name&gt; on</code></a><br />Setze dein Hardwaregerät kurz auf ON und dann wieder auf OFF, wenn der Status nicht bereits ON ist, speichere in der Oberfläche den Status ON</li>
+  <li><code>set &lt;name&gt; off</code></a><br />Setze dein Hardwaregerät kurz auf ON und dann wieder auf OFF, wenn der Status nicht bereits OFF ist<, speichere in der Oberfläche den Status OFF/li>
+  <li><code>set &lt;name&gt; reset on</code></a><br />Setze das Modul in FHEM auf ON, ohne dein Hardwaregerät zu schalten.</li>
+  <li><code>set &lt;name&gt; reset off</code></a><br />Setze das Modul in FHEM auf OFF, ohne dein Hardwaregerät zu schalten.</li>
+</ul>
+<br />
+<h4>Attributes</h4>
+<p>Module-spezifische Attribute: <a href="#onTime">onTime</a></p>
+<ul>
+	<li><a name="onTime"><b>onTime</b></a>
+        <p>Zeit in Sekunden die das Hardwaregerät beim Schalten ON sein soll, bevor es wieder OFF geschaltet wird. (Default = 0.5)</p>
+  </li>
+</ul>
 =end html_DE
 
 =cut

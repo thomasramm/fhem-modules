@@ -1,2 +1,2 @@
 DEL ./FHEM/58_RolloRelais.pm
-UPD 2020-11-30_12:00:00 11684 FHEM/58_RolloRelais.pm
+UPD 2020-11-30_12:17:00 11685 FHEM/58_RolloRelais.pm

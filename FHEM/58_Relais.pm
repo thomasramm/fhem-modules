@@ -135,6 +135,7 @@ sub Relais_Attr(@) {
 =pod
 
 =begin html
+
 <a name="Relais"></a>
 <h3>Relais</h3>
 <p>Logical modul to use a 'surge switch' for your lights. Send a short on/off to your device, but still remind device state.
@@ -176,6 +177,7 @@ sub Relais_Attr(@) {
 =end html
 
 =begin html_DE
+
 <a name="Relais"></a>
 <h3>Relais</h3>
 <p>Logisches Modul um einen 'Stromstossschalter' zu steuern. Sende ein kurzes ON/OFF an dein Gerät, und merke dir den aktuellen Gerätestatus.

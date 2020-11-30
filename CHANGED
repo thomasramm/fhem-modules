@@ -1,11 +1,5 @@
-=====================================================
-Changed für alle Module von ThomasRamm
-=====================================================
-Relais:
-2020-11-30 - fixed german commandref
-
-RolloRelais:
-2020-11-30 - none
-
-Taster:
-2020-11-30 - none
+=== CHANGEDLOG for all modules from thomasramm ===
+Relais: 2020-11-30 - fixed german commandref
+RolloRelais: 2020-11-30 - none
+Taster: 2020-11-30 - none
+==================================================
